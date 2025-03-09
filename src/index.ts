@@ -1,7 +1,9 @@
 export enum WordBattleFunctionName {
   GET_USER = "GET_USER",
+  REGISTER_USER = "REGISTER_USER",
 }
 
+/* GetUser */
 export interface GetUserRequest {
   uuid: string;
 }
@@ -14,9 +16,23 @@ export type GetUserFunction = (
   data: GetUserRequest
 ) => Promise<GetUserResponse>;
 
-export type WordBattleFunction = GetUserFunction;
+/* RegisterUser */
+export interface RegisterUserRequest {
+  username: string;
+  word: string;
+}
+export interface RegisterUserResponse {
+  uuid: string;
+  username: string;
+  word: string;
+}
+export type RegisterUserFunction = (
+  data: RegisterUserRequest
+) => Promise<RegisterUserResponse>;
 
-export type WordBattleRequestData = GetUserRequest;
+export type WordBattleFunction = GetUserFunction | RegisterUserFunction;
+
+export type WordBattleRequestData = GetUserRequest | RegisterUserRequest;
 export interface WordBattleRequest {
   funcName: WordBattleFunctionName;
   data: WordBattleRequestData;
