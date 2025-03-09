@@ -1,4 +1,4 @@
-export enum WordBattleFunction {
+export enum WordBattleFunctionName {
   GET_USER = "GET_USER",
 }
 
@@ -10,9 +10,14 @@ export interface GetUserResponse {
   username: string;
   word: string;
 }
+export type GetUserFunction = (
+  data: GetUserRequest
+) => Promise<GetUserResponse>;
+
+export type WordBattleFunction = GetUserFunction;
 
 export type WordBattleRequestData = GetUserRequest;
 export interface WordBattleRequest {
-  funcName: WordBattleFunction;
+  funcName: WordBattleFunctionName;
   data: WordBattleRequestData;
 }
