@@ -1,11 +1,11 @@
+import { UserRecord } from "./user";
+
 export interface RegisterUserRequest {
   username: string;
   word: string;
 }
 export interface RegisterUserResponse {
-  uuid: string;
-  username: string;
-  word: string;
+  userRecord: UserRecord;
 }
 export type RegisterUserFunction = (
   data: RegisterUserRequest
