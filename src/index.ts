@@ -13,6 +13,6 @@ export interface GetUserResponse {
 
 export type WordBattleRequestData = GetUserRequest;
 export interface WordBattleRequest {
-  function: WordBattleFunction;
+  funcName: WordBattleFunction;
   data: WordBattleRequestData;
 }
