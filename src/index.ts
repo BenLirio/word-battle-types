@@ -1,30 +1,18 @@
-// User related types
-export interface User {
-  id: string;
-  email: string;
-  firstName?: string;
-  lastName?: string;
-  createdAt: Date;
-  updatedAt: Date;
+export enum WordBattleFunction {
+  GET_USER = "GET_USER",
 }
 
-// Authentication related types
-export interface AuthToken {
-  token: string;
-  expiresAt: Date;
+export interface GetUserRequest {
+  uuid: string;
+}
+export interface GetUserResponse {
+  uuid: string;
+  username: string;
+  word: string;
 }
 
-export interface LoginResponse {
-  user: User;
-  auth: AuthToken;
-}
-
-// API Response types
-export interface ApiResponse<T> {
-  success: boolean;
-  data?: T;
-  error?: {
-    code: string;
-    message: string;
-  };
+export type WordBattleRequestData = GetUserRequest;
+export interface WordBattleRequest {
+  function: WordBattleFunction;
+  data: WordBattleRequestData;
 }
