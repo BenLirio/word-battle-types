@@ -2,6 +2,7 @@ import { UserRecord } from "./user";
 
 export interface GetBattleRequest {
   uuid: string;
+  timestamp: number;
 }
 export interface GetBattleResponse {
   userRecord: UserRecord;
