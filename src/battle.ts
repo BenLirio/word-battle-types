@@ -10,5 +10,6 @@ export interface BattleResponse {
   loserUserRecord: UserRecord;
   eloChange: number;
   message: string;
+  timestamp: number;
 }
 export type BattleFunction = (data: BattleRequest) => Promise<BattleResponse>;
