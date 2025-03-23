@@ -3,4 +3,5 @@ export interface UserRecord {
   username: string;
   word: string;
   elo: number;
+  leaderboard?: string;
 }
